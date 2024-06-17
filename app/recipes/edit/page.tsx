@@ -1,22 +1,20 @@
 import React from "react";
 import {
   Table,
-  TableBody,
   TableCaption,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { getRecipes } from "@/actions/action";
-import TableItem from "@/components/TableItem";
+import TableBody from "@/components/TableBody";
 import connect from "@/lib/db";
 
 export default async function EditRecipe() {
   await connect();
   const recipes = await getRecipes();
   return (
-    <main>
+    <main className="py-8">
       <Table>
         <TableCaption>A list of all recipes.</TableCaption>
         <TableHeader>
@@ -27,14 +25,7 @@ export default async function EditRecipe() {
             <TableHead className="text-right">Edit/Delete</TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
-          {recipes.map((recipe, i) => (
-            <TableRow key={recipe._id}>
-              <TableCell className="font-medium">{recipe._id}</TableCell>
-              <TableItem recipe={recipe} index={i} />
-            </TableRow>
-          ))}
-        </TableBody>
+        <TableBody recipes={recipes} />
       </Table>
     </main>
   );

@@ -29,7 +29,19 @@ const getCommands = async () => {
 
   return posts;
 };
-
+const deleteCommand = async (id: string) => {
+  await Post.deleteOne({ _id: id }).then((result) => console.log(result));
+};
+const updateCommand = async (post: {
+  _id: string;
+  command: string;
+  response: string;
+}) => {
+  await Post.updateOne(
+    { _id: post._id },
+    { command: post.command, response: post.response }
+  ).then((result) => console.log(result));
+};
 const addRecipe = async (post: { name: string; link: string }) => {
   const { name, link } = post;
 
@@ -40,6 +52,20 @@ const addRecipe = async (post: { name: string; link: string }) => {
     link: savedPost.link,
     id: savedPost._id,
   };
+};
+
+const deleteRecipe = async (id: string) => {
+  await Recipe.deleteOne({ _id: id }).then((result) => console.log(result));
+};
+const updateRecipe = async (recipe: {
+  _id: string;
+  name: string;
+  link: string;
+}) => {
+  await Recipe.updateOne(
+    { _id: recipe._id },
+    { name: recipe.name, link: recipe.link }
+  ).then((result) => console.log(result));
 };
 
 const getRecipes = async () => {
@@ -56,4 +82,13 @@ const getRecipes = async () => {
   return recipes;
 };
 
-export { addCommand, getCommands, addRecipe, getRecipes };
+export {
+  addCommand,
+  getCommands,
+  deleteCommand,
+  updateCommand,
+  addRecipe,
+  getRecipes,
+  deleteRecipe,
+  updateRecipe,
+};

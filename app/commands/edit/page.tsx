@@ -1,24 +1,22 @@
 import React from "react";
 import {
   Table,
-  TableBody,
   TableCaption,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { getCommands } from "@/actions/action";
-import CommandItem from "@/components/CommandItem";
 import connect from "@/lib/db";
+import CommandBody from "@/components/CommandBody";
 
 export default async function EditCommand() {
   await connect();
   const commands = await getCommands();
   return (
-    <main>
+    <main className="py-8">
       <Table>
-        <TableCaption>A list of all recipes.</TableCaption>
+        <TableCaption>A list of all commands.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">I.D.</TableHead>
@@ -27,16 +25,7 @@ export default async function EditCommand() {
             <TableHead className="text-right">Edit/Delete</TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody>
-          {commands.map((command, i) => {
-            return (
-              <TableRow key={command._id}>
-                <TableCell className="font-medium">{command._id}</TableCell>
-                <CommandItem command={command} index={i} />
-              </TableRow>
-            );
-          })}
-        </TableBody>
+        <CommandBody commands={commands} />
       </Table>
     </main>
   );

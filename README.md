@@ -1,6 +1,6 @@
 # Discord Bot Admin Dashboard
 
-This is an admin dashboard for controlling commands for a Discord.js bot. The dashboard is built with Next.js, TypeScript, Tailwind CSS, shadcn, Clerk for authentication, MongoDB for data storage, and deployed on Vercel.
+This is an admin dashboard for controlling commands for a Discord.js bot. The dashboard is built with Next.js, TypeScript, Tailwind CSS, shadcn, Clerk for authentication, MongoDB for data storage, and deployed on Vercel. The code for the bot can be found [here.](https://github.com/ljreaux/MMMeadBot)
 
 ## Table of Contents
 

@@ -88,9 +88,9 @@ Open http://localhost:3000 with your browser to see the dashboard.
 
 Here are some screenshots of the admin dashboard:
 
-![Home page]("/Screen Shot 2024-06-17 at 2.03.25 PM.png")
-![Edit Command form]("/Screen Shot 2024-06-17 at 2.03.11 PM.png")
-![Edit/Cancel]("/Screen Shot 2024-06-17 at 2.03.25 PM.png")
+![Home page]("./public/Screen Shot 2024-06-17 at 2.03.25 PM.png")
+![Edit Command form]("./public/Screen Shot 2024-06-17 at 2.03.11 PM.png")
+![Edit/Cancel]("./public/Screen Shot 2024-06-17 at 2.03.25 PM.png")
 
 ### Contributing
 

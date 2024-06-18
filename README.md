@@ -88,9 +88,10 @@ Open http://localhost:3000 with your browser to see the dashboard.
 
 Here are some screenshots of the admin dashboard:
 
-![Home page]("./public/Screen Shot 2024-06-17 at 2.03.25 PM.png")
-![Edit Command form]("./public/Screen Shot 2024-06-17 at 2.03.11 PM.png")
-![Edit/Cancel]("./public/Screen Shot 2024-06-17 at 2.03.25 PM.png")
+![Home page](https://github.com/ljreaux/discord-bot-interface/blob/main/public/Screen%20Shot%202024-06-17%20at%202.03.25%20PM.png?raw=true)
+![Edit Command form](https://github.com/ljreaux/discord-bot-interface/blob/main/public/Screen%20Shot%202024-06-17%20at%202.03.11%20PM.png?raw=true)
+![Edit/Cancel](https://github.com/ljreaux/discord-bot-interface/blob/main/public/Screen%20Shot%202024-06-17%20at%202.03.58%20PM.png?raw=true)
+![Modal](https://github.com/ljreaux/discord-bot-interface/blob/main/public/Screen%20Shot%202024-06-17%20at%202.04.29%20PM.png?raw=true)
 
 ### Contributing
 

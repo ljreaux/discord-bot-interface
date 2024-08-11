@@ -2,6 +2,7 @@
 
 import Post from "@/models/commands";
 import Recipe from "@/models/recipes";
+import Video from "@/models/videos";
 
 const addCommand = async (post: { command: string; response: string }) => {
   const { command, response } = post;
@@ -82,6 +83,46 @@ const getRecipes = async () => {
   return recipes;
 };
 
+const addVideo = async (post: { command: string; response: string }) => {
+  const { command, response } = post;
+
+  const newVideo = new Video({ command, response });
+  const savedVideo = await newVideo.save();
+
+  return {
+    command: savedVideo.command,
+    response: savedVideo.response,
+    id: savedVideo._id.toString(),
+  };
+};
+
+const getVideos = async () => {
+  const videos = await Video.find({}).then((videos) =>
+    videos.map((vid) => {
+      return {
+        _id: vid._id.toString(),
+        command: vid.command,
+        response: vid.response,
+      };
+    })
+  );
+
+  return videos;
+};
+const deleteVideo = async (id: string) => {
+  await Video.deleteOne({ _id: id }).then((result) => console.log(result));
+};
+const updateVideo = async (video: {
+  _id: string;
+  command: string;
+  response: string;
+}) => {
+  await Video.updateOne(
+    { _id: video._id },
+    { command: video.command, response: video.response }
+  ).then((result) => console.log(result));
+};
+
 export {
   addCommand,
   getCommands,
@@ -91,4 +132,8 @@ export {
   getRecipes,
   deleteRecipe,
   updateRecipe,
+  addVideo,
+  getVideos,
+  deleteVideo,
+  updateVideo,
 };

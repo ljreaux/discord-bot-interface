@@ -67,6 +67,25 @@ export default function Navbar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <NavigationMenuTrigger className="text-xl">
+            Videos
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] justify-center items-center text-center">
+              <li className="row-span-2">
+                <NavigationMenuLink href="/videos/new">
+                  Add New Video
+                </NavigationMenuLink>
+              </li>
+              <li className="row-span-2">
+                <NavigationMenuLink href="/videos/edit">
+                  Edit Videos
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <UserInfoContainer />
         </NavigationMenuItem>
       </NavigationMenuList>

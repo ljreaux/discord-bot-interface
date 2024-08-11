@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { TableCell, TableRow, TableBody } from "./ui/table";
 import VideoItem from "./VideoItem";
 
-export default function videoBody({
+export default function VideoBody({
   videos,
 }: {
   videos: { _id: string; command: string; response: string }[];
